@@ -1,0 +1,58 @@
+[1mdiff --git a/option.jsp b/option.jsp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..26f6399[m
+[1m--- /dev/null[m
+[1m+++ b/option.jsp[m
+[36m@@ -0,0 +1,51 @@[m
+[32m+[m[32m<%@ page language="java" contentType="text/html; charset=utf-8"[m
+[32m+[m[32m    pageEncoding="utf-8"%>[m
+[32m+[m[32m    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>[m
+[32m+[m[32m<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">[m
+[32m+[m[32m<html>[m
+[32m+[m[32m<head>[m
+[32m+[m[32m<meta http-equiv="Content-Type" content="text/html; charset=utf-8">[m
+[32m+[m[32m<title>show tables</title>[m
+[32m+[m[32m</head>[m
+[32m+[m[32m<body>[m
+[32m+[m
+[32m+[m[32m<table border="1px" cellspacing="0" width=800px>[m
+[32m+[m	[32m<tr>[m
+[32m+[m		[32m<td>编号</td>[m
+[32m+[m		[32m<td>用户名</td>[m
+[32m+[m		[32m<td>密码</td>[m
+[32m+[m		[32m<td>删除</td>[m
+[32m+[m		[32m<td>修改</td>[m
+[32m+[m		[32m<td>添加</td>[m
+[32m+[m[41m		[m
+[32m+[m	[32m</tr>[m
+[32m+[m[41m	[m
+[32m+[m	[32m<c:forEach items="${list }" var="l">[m[41m [m
+[32m+[m		[32m<tr>[m
+[32m+[m			[32m<td>${l.id }</td>[m
+[32m+[m				[32m<td>${l.username }</td>[m
+[32m+[m				[32m<td>${l.password }</td>[m
+[32m+[m				[32m<td><a href="./delete?id=${l.id }" onclick="return confirm('确认删除?')">删除</a></td>[m
+[32m+[m				[32m<td><a href=update.jsp>修改</a></td>[m
+[32m+[m				[32m<td><a href=add.jsp>新增</a></td>[m
+[32m+[m[41m				[m
+[32m+[m		[32m</tr>[m
+[32m+[m		[32m</c:forEach>[m
+[32m+[m	[32m<tr>[m
+[32m+[m		[32m<form action="./add" method="get">[m
+[32m+[m[41m		[m
+[32m+[m		[32m<td><input type="text" name="username" placeholder="user"/></td>[m
+[32m+[m		[32m<br/>[m
+[32m+[m		[32m<td><input type="password" name="password" placeholder="pwd"/></td>[m
+[32m+[m		[32m<br/>[m
+[32m+[m		[32m<td><input type="submit" value="Add"/></td>[m
+[32m+[m			[32m</tr>[m
+[32m+[m[41m	[m
+[32m+[m		[32m</form>[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m[32m</table>[m
+[32m+[m
+[32m+[m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
